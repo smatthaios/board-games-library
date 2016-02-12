@@ -34,7 +34,7 @@
                      height="40">
             </div>
             <!-- BEGIN NOTIFICATION DROPDOWN -->
-            <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l <%--b-r--%> no-style p-l-30 p-r-20">
+            <%--<ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l &lt;%&ndash;b-r&ndash;%&gt; no-style p-l-30 p-r-20">
                 <li class="p-r-15 inline">
                     <div class="dropdown">
                         <a href="javascript:;" id="notification-center" class="icon-set globe-fill" data-toggle="dropdown">
@@ -79,7 +79,7 @@
                 <li class="p-r-15 inline">
                     <a href="#" class="icon-set grid-box"></a>
                 </li>
-            </ul>
+            </ul>--%>
             <!-- END NOTIFICATION DROPDOWN -->
             <%--<a href="!/mainboard" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a>--%>
         </div>
@@ -100,9 +100,9 @@
                     <li>
                         <a href="#!/profile"><i class="pg-settings_small"></i> Profile</a>
                     </li>
-                    <li class="bg-master-lighter">
-                        <a href="#" class="clearfix">
-                            <span class="pull-left" ng-click="logout()">Logout</span>
+                    <li class="bg-master-lighter" ng-click="logout()">
+                        <a href class="clearfix">
+                            <span class="pull-left">Logout</span>
                             <span class="pull-right"><i class="pg-power"></i></span>
                         </a>
                     </li>

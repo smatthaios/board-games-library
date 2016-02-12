@@ -25,7 +25,7 @@
                                 <li>
                                     <p><a href="#!/mainboard">Board Game Library</a></p>
                                 </li>
-                                <li><a href="#" class="active">MainBoard</a>
+                                <li><a href="#" class="active">Board Game Management</a>
                                 </li>
                             </ul>
                             <!-- END BREADCRUMB -->
@@ -42,32 +42,33 @@
 
                                 <div class="panel panel-transparent">
                                     <div class="panel-heading">
-                                        <div class="panel-title"><h1>Welcome to Board Game Library!</h1></div>
+                                        <div class="panel-title">Manipulate Board Games</div>
                                     </div>
                                     <div class="panel-body">
-                                       <%-- <table st-table="rowCollection" class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
-                                                </tr>
-                                                <tr>
-                                                    <th>first name</th>
-                                                    <th>last name</th>
-                                                    <th>birth date</th>
-                                                    <th>balance</th>
-                                                    <th>email</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr ng-repeat="row in rowCollection">
-                                                    <td>{{row.firstName}}</td>
-                                                    <td>{{row.lastName}}</td>
-                                                    <td>{{row.birthDate}}</td>
-                                                    <td>{{row.balance}}</td>
-                                                    <td>{{row.email}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>--%>
+                                            <table st-table="rowCollection" class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <th>Brand</th>
+                                                        <th>Birth Date</th>
+                                                        <th>Price</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="row in rowCollection">
+                                                        <td>{{row.firstName}}</td>
+                                                        <td>{{row.lastName}}</td>
+                                                        <td>{{row.birthDate}}</td>
+                                                        <td>{{row.balance}}</td>
+                                                        <td>{{row.email}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                     </div>
                                 </div>
 

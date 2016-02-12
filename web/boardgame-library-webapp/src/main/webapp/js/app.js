@@ -1,32 +1,19 @@
 /**
  * Defines/Initiates Angular Application
  */
-app = angular.module('app', ['ngRoute', 'ui.select2'])
+
+var passwordRegExp = new RegExp("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).{6,13}$");
+
+app = angular.module('app', ['ngRoute', 'ui.select2', 'smart-table'])
     .run(['$rootScope', 'UserRestService', function ($rootScope, UserRestService) {
 
 		// Active User retrieved from Spring MVC.
 		//$rootScope.activeUser = JSON.parse(activeUser);
 
-        $rootScope.gridsToDestroy;
-
-        $rootScope.$on('$routeChangeStart', function () {
-            if ($rootScope.gridsToDestroy) {
-                for (var grid in $rootScope.gridsToDestroy) {
-                    Ext.getCmp($rootScope.gridsToDestroy[grid]).destroy();
-                }
-                $rootScope.gridsToDestroy = null;
-            }
-        });
-
 		$rootScope.logout = function () {
 			sessionStorage.clear();
 			window.location.href = baseUrl + 'login.html';
 		}
-
-        $rootScope.logout = function () {
-            sessionStorage.clear();
-            window.location.href = baseUrl + 'login.html';
-        };
 
 		function setActiveUser(data) {
 			if (data) {
@@ -43,7 +30,10 @@ app = angular.module('app', ['ngRoute', 'ui.select2'])
         $routeProvider
             .when('/mainboard', { controller: 'MainBoard', templateUrl: baseUrl + 'sections/mainboard.html' })
             .when('/profile', { controller: 'Profile', templateUrl: baseUrl + 'sections/profile.html' })
-            .when('/forecast/:id', { controller: 'Forecast', templateUrl: baseUrl + 'sections/forecast.html' })
+            .when('/users/', { controller: 'UserManagement', templateUrl: baseUrl + 'sections/userManagement.html' })
+            .when('/users/:id', { controller: 'UserManagement', templateUrl: baseUrl + 'sections/userManagement.html' })
+            .when('/boardgames/', { controller: 'BoardGameManagement', templateUrl: baseUrl + 'sections/boardGameManagement.html' })
+            .when('/boardgames/:id', { controller: 'BoardGameManagement', templateUrl: baseUrl + 'sections/boardGameManagement.html' })
             .otherwise({ redirectTo: '/mainboard' });
     }])
     .factory('noCacheInterceptor', function () {
@@ -58,8 +48,6 @@ app = angular.module('app', ['ngRoute', 'ui.select2'])
             }
         };
     });
-
-
 
 ResponseStatusLocal = {
 	OK: "OK",

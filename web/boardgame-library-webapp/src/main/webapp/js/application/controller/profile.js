@@ -1,10 +1,12 @@
 /**
  * Profile Controller is responsible to manipulate Users profile.
  */
-app.controller('Profile', ['$scope', '$rootScope', '$location', 'UserService', 'ProjectService',
-	function ($scope, $rootScope, $location, UserService) {
+app.controller('Profile', ['$scope', '$rootScope', 'UserService',
+	function ($scope, $rootScope, UserService) {
 		var infoPanel = $('#information'),
 			newPassword = $('#newPassword'),
+			firstName = $('#firstName'),
+			lastName = $('#lastName'),
 			newPasswordConfirm = $('#newPasswordConfirm'),
 			changePasswordPanel = $('#change-password');
 
@@ -22,12 +24,22 @@ app.controller('Profile', ['$scope', '$rootScope', '$location', 'UserService', '
 			/**
 			 * Saves the active User Profile.
 			 */
-			$scope.saveProfile = function () {
+			$scope.updateProfile = function () {
+				if (!$scope.newFirstName) {
+					Validator.showErrorMessage(firstName, 'First Name cannot be empty.');
+					return;
+				}
+				if (!$scope.newLastName) {
+					Validator.showErrorMessage(lastName, 'Last Name cannot be empty.');
+					return;
+				}
+
 				infoPanel.mask(true);
-				UserService.updateProfile($scope.newFirstName, $scope.newLastName, $scope.defaultProjectId, $scope.introEnabled).then(function (data) {
+				UserService.updateProfile($rootScope.activeUser.id, $scope.newFirstName, $scope.newLastName).then(function (data) {
 					$rootScope.activeUser = data[0];
 					infoPanel.mask(false);
-					Notify.info(Locale.get('userUpdated'));
+
+					$.notify(Locale.get('userUpdated'), "success");
 				});
 			}
 
@@ -39,6 +51,9 @@ app.controller('Profile', ['$scope', '$rootScope', '$location', 'UserService', '
 					return;
 				}
 				if ($scope.newPassword != $scope.newPasswordConfirm) {
+					//$.notify('Password ' + newPassword + ' and ' + newPasswordConfirm + ' are not the same.', "error");
+
+
 					Validator.showErrorMessage(newPassword, 'Passwords are not the same.');
 					Validator.showErrorMessage(newPasswordConfirm, 'Passwords are not the same.');
 					return;
@@ -49,10 +64,10 @@ app.controller('Profile', ['$scope', '$rootScope', '$location', 'UserService', '
 				}
 
 				changePasswordPanel.mask(true);
-				UserService.changePassword($scope.oldPassword, $scope.newPassword).then(function () {
+				/*UserService.changePassword($scope.oldPassword, $scope.newPassword).then(function () {
 					changePasswordPanel.mask(false);
 					Notify.info('User successfully updated.');
-				});
+				});*/
 			}
 		}
 

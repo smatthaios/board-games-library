@@ -63,11 +63,9 @@ public interface UserService {
 	 * @param userId           the user id
 	 * @param firstName        the first name
 	 * @param lastName         the last name
-	 * @param defaultProjectId the default project id
-	 * @param introEnabled     the intro enabled
 	 * @return the user
 	 */
-	/*User update(String userId, String firstName, String lastName, String defaultProjectId, Boolean introEnabled);*/
+	User update(Long userId, String firstName, String lastName);
 
 	/**
 	 * Reset password of the given user.
@@ -112,5 +110,5 @@ public interface UserService {
 	 * @param userId The {@link User} id
 	 * @return The {@link User}
 	 */
-	User find(String userId) throws UserNotFoundException;
+	User find(Long userId) throws UserNotFoundException;
 }

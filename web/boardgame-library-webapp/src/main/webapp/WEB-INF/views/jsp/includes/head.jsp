@@ -95,10 +95,13 @@
 <script src="<c:url value="/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/jquery/jquery.blockUI.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/jquery/jquery.gritter.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/generic/notify.min.js" />"></script>
 
 <script type="text/javascript" src="<c:url value="/js/angular/angular.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/angular/angular-route.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/angular/select2.js" />"></script>
+
+<script type="text/javascript" src="<c:url value="/js/smartTables/smart-table.min.js" />"></script>
 
 <script type="text/javascript" src="<c:url value="/js/generic/underscore-min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/generic/moment.min.js" />"></script>
@@ -117,6 +120,10 @@
 <script type="text/javascript" src="<c:url value="/js/application/controller/login.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/application/controller/mainboard.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/application/controller/profile.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/application/controller/sideBar.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/application/controller/userManagement.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/application/controller/boardGameManagement.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/application/service/userService.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/application/service/rest/userServiceRest.js" />"></script>
 
 <script type="text/javascript" src="<c:url value="/js/configuration/highChartsConf.js" />"></script>

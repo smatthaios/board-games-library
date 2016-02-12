@@ -99,27 +99,26 @@ public class UserController extends AbstractController {
 	 * Updates the active user's profile.
 	 *
 	 * @param request          the request
+	 * @param userId       	   the user id
 	 * @param firstName        the first name
 	 * @param lastName         the last name
-	 * @param defaultProjectId the default project id
-	 * @param introEnabled     the intro enabled
 	 * @return the updated
 	 * @throws DataException if update fails
 	 */
-	/*@RequestMapping(method = RequestMethod.POST, headers = "action=updateProfile")
-	public Response<User> updateProfile(final HttpServletRequest request, @RequestParam final String firstName, @RequestParam final String lastName,
-										@RequestParam final String defaultProjectId, @RequestParam final Boolean introEnabled) throws
+	@RequestMapping(method = RequestMethod.POST, headers = "action=updateProfile")
+	public Response<User> updateProfile(final HttpServletRequest request, @RequestParam final Long userId, @RequestParam final String firstName,
+										@RequestParam final String lastName) throws
 			DataException {
-		LOGGER.info("User[id:{}] updating profile to [firstName:{},lastName:{},defaultProjectId:{},introEnabled:{}].", getActiveUserId(request),
-				firstName, lastName, defaultProjectId, introEnabled);
+		LOGGER.info("User[id:{}] updating profile to [firstName:{},lastName:{}].", userId,
+				firstName, lastName);
 
 		final Slf4JStopWatch stopWatch = new Slf4JStopWatch();
 
-		User user = userService.update(getActiveUserId(request), firstName, lastName, defaultProjectId, introEnabled);
+		User user = userService.update(userId, firstName, lastName);
 
 		stopWatch.stop(MODULE + "updateProfile");
 		return new Response<>(Arrays.asList(user), ResponseStatus.OK);
-	}*/
+	}
 
 	/**
 	 * Updates specific {@link User fields}

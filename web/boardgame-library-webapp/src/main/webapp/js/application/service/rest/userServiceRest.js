@@ -11,10 +11,10 @@ app.factory('UserRestService', ['$http', '$q', function ($http, $q) {
 			}).error(errorCallback);
 			return deferred.promise;
 		},
-		updateProfile: function (firstName, lastName, defaultProjectId, introEnabled) {
+		updateProfile: function (userId, firstName, lastName) {
 			var deferred = $q.defer();
 			$http.post(url, {
-				firstName: firstName, lastName: lastName, defaultProjectId: defaultProjectId, introEnabled: introEnabled
+				userId: userId, firstName: firstName, lastName: lastName
 			}, prepareFormConfig({'action': 'updateProfile'})).success(function (response) {
 				successCallback(response, deferred)
 			}).error(errorCallback);

@@ -134,6 +134,7 @@ Validator = (function () {
     }
 
     function showErrorMessage(element, message) {
+		console.log('Show error message')
         element.tooltip({
             title: message,
             placement: tipPlacement,
@@ -289,6 +290,7 @@ Notify = (function () {
             });
         },
         info: function (message, header) {
+			console.log(message)
             if (infoId) {
                 $.gritter.remove(infoId);
             }

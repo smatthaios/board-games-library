@@ -21,7 +21,7 @@ public interface UserRepository{
 	 * @param userId The {@link User} id
 	 * @return The {@link User}
 	 */
-	public User find(String userId);
+	public User find(Long userId);
 
 	/**
 	 * Return the {@link User} for the provided id.
@@ -31,5 +31,23 @@ public interface UserRepository{
 	 * @return The {@link User}
 	 */
 	public List<User> find(String attribute, String username);
+
+
+	/**
+	 * Saves the given User.
+	 *
+	 * @param user The {@link User} to be saved.
+	 * @return The {@link User}
+	 */
+	/*public User save(User user);*/
+
+
+	/**
+	 * Updates the given User.
+	 *
+	 * @param user The {@link User} to be saved.
+	 * @return The {@link User}
+	 */
+	public User update(User user);
 
 }

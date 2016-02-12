@@ -37,10 +37,10 @@ public class UserRepositoryImpl extends AbstractRepository implements UserReposi
 
 	/** {@inheritDoc} */
 	@Override
-	public User find(String userId) {
+	public User find(Long userId) {
 		try {
 			final MapSqlParameterSource source = new MapSqlParameterSource();
-			source.addValue("value", Integer.parseInt(userId));
+			source.addValue("value", userId);
 			ParameterizedRowMapper <User> mapper = new ParameterizedRowMapper<User>() {
 				@Override
 				public User mapRow(final ResultSet rs, final int rowNum) throws SQLException {
@@ -86,5 +86,24 @@ public class UserRepositoryImpl extends AbstractRepository implements UserReposi
 			throw new DataException(String.format("Error during getting User for [username:%s] and [attribute:%s]",
 					username, attribute), ex);
 		}
+	}
+
+	/** {@inheritDoc} */
+	@Override
+	public User update(User user) {
+		try {
+			MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+			namedParameters.addValue("user_id", Integer.parseInt(user.getId()));
+			namedParameters.addValue("email", user.getEmail());
+			namedParameters.addValue("password", user.getPassword());
+			namedParameters.addValue("first_name", user.getFirstName());
+			namedParameters.addValue("last_name", user.getLastName());
+			namedParameterJdbcTemplate.update(getSqlCommand("USER.UPDATE"), namedParameters);
+		} catch (final Exception ex) {
+			throw new DataException(String.format("Error while updating User for [id:%s]",
+					user.getId()), ex);
+		}
+
+		return user;
 	}
 }

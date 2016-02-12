@@ -23,9 +23,9 @@
                             <!-- START BREADCRUMB -->
                             <ul class="breadcrumb">
                                 <li>
-                                    <p>Board Game Library</p>
+                                    <p><a href="#!/mainboard">Board Game Library</a></p>
                                 </li>
-                                <li><a href="#" class="active">MainBoard</a>
+                                <li><a href="#" class="active">Profile</a>
                                 </li>
                             </ul>
                             <!-- END BREADCRUMB -->
@@ -35,86 +35,94 @@
                 <!-- END JUMBOTRON -->
                 <!-- START CONTAINER FLUID -->
                 <div class="container-fluid container-fixed-lg">
-                    <!-- BEGIN PlACE PAGE CONTENT HERE -->
-                    <div class="container-fluid container-fixed-lg">
-                        <div class="row">
-                            <div class="col-md-8">
+                    <div id="rootwizard" class="m-t-50">
 
-                                <div class="panel panel-transparent">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Test Board Game table</div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="table-responsive">
-                                            <div id="detailedTable_wrapper" class="dataTables_wrapper form-inline no-footer">
-                                                <table class="table table-hover table-condensed table-detailed dataTable no-footer" id="detailedTable" role="grid">
-                                                    <thead>
-                                                        <tr role="row">
-                                                            <th style="width:25%" class="sorting_disabled" rowspan="1" colspan="1">Title</th>
-                                                            <th style="width: 220px;" class="sorting_disabled" rowspan="1" colspan="1">Status</th>
-                                                            <th style="width: 220px;" class="sorting_disabled" rowspan="1" colspan="1">Price</th>
-                                                            <th style="width: 220px;" class="sorting_disabled" rowspan="1" colspan="1">Last Update</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr role="row" class="odd">
-                                                            <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                                            <td class="v-align-middle">Active</td>
-                                                            <td class="v-align-middle semi-bold">40 Euro</td>
-                                                            <td class="v-align-middle">April 13, 2014</td>
-                                                        </tr>
+                        <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab1"><%--<i class="fa fa-shopping-cart tab-icon"></i>--%><i class="fa fa-user tab-icon"></i> <span>Personal Information</span></a>
+                            </li>
+                            <li class="">
+                                <a data-toggle="tab" href="#tab2"><i class="fa fa-key tab-icon"></i> <span>Change Password</span></a>
+                            </li>
+                        </ul>
 
-                                                        <tr role="row" class="even">
-                                                            <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                                            <td class="v-align-middle">Active</td>
-                                                            <td class="v-align-middle semi-bold">70 Euro</td>
-                                                            <td class="v-align-middle">April 13, 2014</td>
-                                                        </tr>
-                                                        <tr role="row" class="odd">
-                                                            <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                                            <td class="v-align-middle">Active</td>
-                                                            <td class="v-align-middle semi-bold">20 Euro</td>
-                                                            <td class="v-align-middle">April 13, 2014</td>
-                                                        </tr>
-                                                        <tr role="row" class="even">
-                                                            <td class="v-align-middle semi-bold">Revolution Begins</td>
-                                                            <td class="v-align-middle">Active</td>
-                                                            <td class="v-align-middle semi-bold">90 Euro</td>
-                                                            <td class="v-align-middle">April 13, 2014</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                        <div class="tab-content" style="overflow: visible">
+                            <div class="tab-pane padding-20 active slide-left" id="tab1">
+                                <div class="row row-same-height" style="overflow: visible">
+                                    <div class="panel panel-default" style="overflow: visible">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                User Profile
                                             </div>
+                                        </div>
+                                        <div class="panel-body" style="overflow: visible">
+                                            <h5>
+                                                Profile Information
+                                            </h5>
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" value="{{activeUser.email}}" disabled class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>First Name</label>
+                                                    <input type="text" id="firstName" ng-model="newFirstName" class="form-control"<%-- required--%>>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Last Name</label>
+                                                    <input type="text" id="lastName" ng-model="newLastName" class="form-control" <%--required--%>>
+                                                </div>
+
+                                                <div class="form-group pull-right">
+                                                    <button class="btn btn-success" ng-click="updateProfile()">Submit</button>
+                                                    <button class="btn btn-default">Clear</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tab-pane slide-left padding-20" id="tab2" style="overflow: visible">
+                                <div class="row row-same-height" style="overflow: visible">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                User Credentials
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <h5>
+                                                Change Password
+                                            </h5>
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label>Old Password</label>
+                                                    <input type="password" ng-model="oldPassword" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>New Password</label>
+                                                    <input type="password" id="newPassword" ng-model="newPassword" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Confirm New Password</label>
+                                                    <input type="password" id="newPasswordConfirm" ng-model="newPasswordConfirm" class="form-control" required>
+                                                </div>
 
+                                                <div class="form-group pull-right">
+                                                    <button class="btn btn-success" ng-click="changePassword()">Submit</button>
+                                                    <button class="btn btn-default">Clear</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- END PLACE PAGE CONTENT HERE -->
                 </div>
                 <!-- END CONTAINER FLUID -->
             </div>
             <!-- END PAGE CONTENT -->
-            <!-- START FOOTER -->
-            <%-- <div class="container-fluid container-fixed-lg footer">
-                 <div class="copyright sm-text-center">
-                     <p class="small no-margin pull-left sm-pull-reset">
-                         <span class="hint-text">Copyright © 2014</span>
-                         <span class="font-montserrat">REVOX</span>.
-                         <span class="hint-text">All rights reserved.</span>
-                   <span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a>
-                             </span>
-                     </p>
-                     <p class="small no-margin pull-right sm-pull-reset">
-                         <a href="#">Hand-crafted</a>
-                         <span class="hint-text">&amp; Made with Love ®</span>
-                     </p>
-                     <div class="clearfix"></div>
-                 </div>
-             </div>--%>
-            <!-- END FOOTER -->
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>

@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
 	/** {@inheritDoc} */
 	@Override
-	public User find(String userId) throws UserNotFoundException {
+	public User find(Long userId) throws UserNotFoundException {
 		User user = userRepository.find(userId);
 
 		if (user == null) {
@@ -75,6 +75,15 @@ public class UserServiceImpl implements UserService {
 		}
 
 		return user;
+	}
+
+	/** {@inheritDoc} */
+	@Override
+	public User update(Long userId, String firstName, String lastName) {
+		User user = find(userId);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
+		return userRepository.update(user);
 	}
 
 	/**

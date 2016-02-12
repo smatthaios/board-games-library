@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!-- BEGIN SIDEBAR -->
-<div class="page-sidebar" data-pages="sidebar">
+<div class="page-sidebar" data-pages="sidebar" ng-controller="SideBar">
     <div id="appMenu" class="sidebar-overlay-slide from-top">
     </div>
     <!-- BEGIN SIDEBAR HEADER -->
@@ -21,44 +21,28 @@
     <div class="sidebar-menu">
         <ul class="menu-items">
             <li class="">
-                <a href="javascript:;">
+                <a>
                     <span class="title">User Menu</span>
                     <span class=" arrow"></span>
                 </a>
                 <span class="icon-thumbnail"><i class="pg-grid"></i></span>
                 <ul class="sub-menu">
                     <li class="">
-                        <a href="#">Create User</a>
-                        <span class="icon-thumbnail">cu</span>
-                    </li>
-                    <li class="">
-                        <a href="#">Update User</a>
-                        <span class="icon-thumbnail">uu</span>
-                    </li>
-                    <li class="">
-                        <a href="#">Delete User</a>
-                        <span class="icon-thumbnail">du</span>
+                        <a href="#!/users/">Manipulate Users</a>
+                        <span class="icon-thumbnail">mu</span>
                     </li>
                 </ul>
             </li>
             <li class="">
-                <a href="javascript:;">
+                <a>
                     <span class="title">Board Game Menu</span>
                     <span class=" arrow"></span>
                 </a>
                 <span class="icon-thumbnail"><i class="pg-grid"></i></span>
                 <ul class="sub-menu">
                     <li class="">
-                        <a href="#">Create Board Game</a>
-                        <span class="icon-thumbnail">cbg</span>
-                    </li>
-                    <li class="">
-                        <a href="#">Update Board Game</a>
-                        <span class="icon-thumbnail">ubg</span>
-                    </li>
-                    <li class="">
-                        <a href="#">Delete Board Game</a>
-                        <span class="icon-thumbnail">dbg</span>
+                        <a href="#!/boardgames/">Manipulate Board Games</a>
+                        <span class="icon-thumbnail">mbg</span>
                     </li>
                 </ul>
             </li>

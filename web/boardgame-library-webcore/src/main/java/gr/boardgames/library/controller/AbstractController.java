@@ -107,7 +107,7 @@ public abstract class AbstractController {
 	protected User getActiveUser(HttpServletRequest request) {
 		String userId = getActiveUserId(request);
 		if (StringUtils.hasText(userId)) {
-			User user = userService.find(userId);
+			User user = userService.find(Long.parseLong(userId));
 			//remove the password for security reasons
 			user.setPassword(null);
 			return user;
