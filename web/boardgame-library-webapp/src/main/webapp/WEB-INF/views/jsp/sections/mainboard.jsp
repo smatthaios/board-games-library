@@ -25,7 +25,7 @@
                                 <li>
                                     <p><a href="#!/mainboard">Board Game Library</a></p>
                                 </li>
-                                <li><a href="#" class="active">MainBoard</a>
+                                <li><a class="active">MainBoard</a>
                                 </li>
                             </ul>
                             <!-- END BREADCRUMB -->

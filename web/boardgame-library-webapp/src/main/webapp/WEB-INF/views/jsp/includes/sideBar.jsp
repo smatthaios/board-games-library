@@ -21,7 +21,7 @@
     <div class="sidebar-menu">
         <ul class="menu-items">
             <li class="">
-                <a>
+                <a href>
                     <span class="title">User Menu</span>
                     <span class=" arrow"></span>
                 </a>
@@ -34,7 +34,7 @@
                 </ul>
             </li>
             <li class="">
-                <a>
+                <a href>
                     <span class="title">Board Game Menu</span>
                     <span class=" arrow"></span>
                 </a>

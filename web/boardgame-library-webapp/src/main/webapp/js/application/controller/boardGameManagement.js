@@ -9,6 +9,9 @@ app.controller('BoardGameManagement', ['$scope', '$rootScope',
 		 * Creates the scope functions of the Controller.
 		 */
 		function createScopeFunctions() {
+			$scope.openBoardGameModal = function (){
+
+			}
 		}
 
 		/**

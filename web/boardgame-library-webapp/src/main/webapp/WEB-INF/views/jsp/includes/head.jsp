@@ -18,7 +18,7 @@
 <link href="<c:url value="/assets/plugins/jquery-scrollbar/jquery.scrollbar.css" />" rel="stylesheet" type="text/css" media="screen" />
 <link href="<c:url value="/assets/plugins/bootstrap-select2/select2.css" />" rel="stylesheet" type="text/css" media="screen" />
 <link href="<c:url value="/assets/plugins/switchery/css/switchery.min.css" />" rel="stylesheet" type="text/css" media="screen" />
-<link href="<c:url value="/styles/app.css" />" rel="stylesheet" type="text/css" media="screen" />
+<%--<link href="<c:url value="/styles/app.css" />" rel="stylesheet" type="text/css" media="screen" />--%>
 <!-- BEGIN Pages CSS-->
 <link href="<c:url value="/styles/pages-icons.css" />" rel="stylesheet" type="text/css">
 <link class="main-stylesheet" href="<c:url value="/styles/pages.css" />" rel="stylesheet" type="text/css" />

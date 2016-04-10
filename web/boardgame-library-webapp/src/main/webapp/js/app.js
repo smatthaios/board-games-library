@@ -24,15 +24,15 @@ app = angular.module('app', ['ngRoute', 'ui.select2', 'smart-table'])
 		UserRestService.getActive().then(setActiveUser);
 
     }])
-    .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
-        $httpProvider.interceptors.push('noCacheInterceptor');
-        $locationProvider.hashPrefix('!');
+    .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider/*, $httpProvider*/) {
+        /*$httpProvider.interceptors.push('noCacheInterceptor');*/
+        $locationProvider.hashPrefix('!').html5Mode(false);
         $routeProvider
             .when('/mainboard', { controller: 'MainBoard', templateUrl: baseUrl + 'sections/mainboard.html' })
             .when('/profile', { controller: 'Profile', templateUrl: baseUrl + 'sections/profile.html' })
-            .when('/users/', { controller: 'UserManagement', templateUrl: baseUrl + 'sections/userManagement.html' })
+            .when('/users', { controller: 'UserManagement', templateUrl: baseUrl + 'sections/userManagement.html' })
             .when('/users/:id', { controller: 'UserManagement', templateUrl: baseUrl + 'sections/userManagement.html' })
-            .when('/boardgames/', { controller: 'BoardGameManagement', templateUrl: baseUrl + 'sections/boardGameManagement.html' })
+            .when('/boardgames', { controller: 'BoardGameManagement', templateUrl: baseUrl + 'sections/boardGameManagement.html' })
             .when('/boardgames/:id', { controller: 'BoardGameManagement', templateUrl: baseUrl + 'sections/boardGameManagement.html' })
             .otherwise({ redirectTo: '/mainboard' });
     }])
@@ -48,6 +48,11 @@ app = angular.module('app', ['ngRoute', 'ui.select2', 'smart-table'])
             }
         };
     });
+
+$('.nav-tabs a').click(function (e) {
+	e.preventDefault();
+	$(this).tab('show');
+});
 
 ResponseStatusLocal = {
 	OK: "OK",

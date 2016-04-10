@@ -11,13 +11,13 @@
         <!-- START ACTION BAR -->
         <div class="sm-action-bar">
             <a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
-                <span class="icon-set menu-hambuger"></span>
+                <span class="icon-set menu-hambuger"></span>asd
             </a>
         </div>
         <!-- END ACTION BAR -->
     </div>
     <!-- RIGHT SIDE -->
-    <div class="pull-right full-height visible-sm visible-xs">
+    <%--<div class="pull-right full-height visible-sm visible-xs">
         <!-- START ACTION BAR -->
         <div class="sm-action-bar">
             <a href="#" class="btn-link" data-toggle="quickview" data-toggle-element="#quickview">
@@ -25,7 +25,7 @@
             </a>
         </div>
         <!-- END ACTION BAR -->
-    </div>
+    </div>--%>
     <!-- END MOBILE CONTROLS -->
     <div class=" pull-left sm-table">
         <div class="header-inner">

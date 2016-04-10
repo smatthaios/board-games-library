@@ -38,7 +38,7 @@
                     <!-- BEGIN PlACE PAGE CONTENT HERE -->
                     <div class="container-fluid container-fixed-lg">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-xs-12">
 
                                 <div class="panel panel-transparent">
                                     <div class="panel-heading">
@@ -68,6 +68,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        <button class="btn btn-complete btn-cons pull-right" onclick="openBoardGameModal()">Add New</button>
 
                                     </div>
                                 </div>

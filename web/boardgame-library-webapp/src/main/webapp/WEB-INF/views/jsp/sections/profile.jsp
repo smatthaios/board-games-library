@@ -39,7 +39,7 @@
 
                         <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm">
                             <li class="active">
-                                <a data-toggle="tab" href="#tab1"><%--<i class="fa fa-shopping-cart tab-icon"></i>--%><i class="fa fa-user tab-icon"></i> <span>Personal Information</span></a>
+                                <a data-toggle="tab" href="#tab1"><i class="fa fa-user tab-icon"></i> <span>Personal Information</span></a>
                             </li>
                             <li class="">
                                 <a data-toggle="tab" href="#tab2"><i class="fa fa-key tab-icon"></i> <span>Change Password</span></a>

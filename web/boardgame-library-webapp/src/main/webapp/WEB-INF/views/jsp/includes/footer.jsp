@@ -12,13 +12,13 @@
         <!-- END PAGE LEVEL JS -->
 
         <script>
-            /*angular.element(document).ready(function () {
+            angular.element(document).ready(function () {
                 (function($) {
                     'use strict';
                     // Initialize layouts and plugins
                     $.Pages.init();
                 })(window.jQuery);
-            });*/
+            });
             //Angular breaks if this is done earlier than document ready.
 
         </script>
