@@ -76,8 +76,8 @@
 
 
 
-<script type="text/javascript" src="<c:url value="/js/pages.min.${minifiedAddon}js?v=${buildNumber}" />"></script>--%>
-<%--<script type="text/javascript" src="<c:url value="/js/pages.${minifiedAddon}js?v=${buildNumber}" />"></script>--%>
+<script type="text/javascript" src="<c:url value="/js/pages.min.${minifiedAddon}js" />"></script>--%>
+<%--<script type="text/javascript" src="<c:url value="/js/pages.${minifiedAddon}js" />"></script>--%>
 
 <!-- BEGIN VENDOR JS -->
 <script src="<c:url value="/assets/plugins/pace/pace.min.js" />" type="text/javascript"></script>
@@ -85,7 +85,7 @@
 <script src="<c:url value="/assets/plugins/modernizr.custom.js" />" type="text/javascript"></script>
 <script src="<c:url value="/assets/plugins/jquery-ui/jquery-ui.min.js" />" type="text/javascript"></script>
 <script src="<c:url value="/assets/plugins/boostrapv3/js/bootstrap.min.js" />" type="text/javascript"></script>
-<script type="text/javascript" src="<c:url value="/js/bootstrap/bootbox.min.js?v=${buildNumber}" />"></script>
+<script type="text/javascript" src="<c:url value="/js/bootstrap/bootbox.min.js" />"></script>
 <script src="<c:url value="/assets/plugins/jquery/jquery-easy.js" />" type="text/javascript"></script>
 <script src="<c:url value="/assets/plugins/jquery-unveil/jquery.unveil.min.js" />" type="text/javascript"></script>
 <script src="<c:url value="/assets/plugins/jquery-bez/jquery.bez.min.js" />"></script>
