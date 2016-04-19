@@ -12,6 +12,7 @@
         <module>core</module>
         <module>web</module>
         <module>liquibase</module>
+        <module>parser</module>
 	</modules>
 
 	<properties>
