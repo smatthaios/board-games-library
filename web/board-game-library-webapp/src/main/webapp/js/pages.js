@@ -1653,6 +1653,10 @@
 				return;
 			}
 
+			if (e.handled) {
+				return;
+			}
+
 			var parent = $(this).parent().parent();
 			var tempElem = $(this).parent();
 
@@ -1665,6 +1669,7 @@
 			var sub = $(this).parent().children('.sub-menu');
 			if (sub.is(":visible")) {
 				$('.arrow', $(this)).removeClass("open");
+				e.handled=true;
 
 				sub.slideUp(200, function() {
 					$(this).parent().removeClass("active");
@@ -1672,6 +1677,7 @@
 			} else {
 				$('.arrow', $(this)).addClass("open");
 				$(this).parent().addClass("open");
+				e.handled=true;
 				sub.slideDown(200, function() {});
 			}
 			//e.preventDefault();
