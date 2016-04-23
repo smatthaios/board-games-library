@@ -51,6 +51,8 @@
 		<log4j.version>2.0.2</log4j.version>
 
 		<joda-time.version>2.5</joda-time.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<commons-csv.version>1.2</commons-csv.version>
 	</properties>
 
 	<dependencyManagement>
@@ -231,7 +233,16 @@
 				<artifactId>jackson-databind</artifactId>
 				<version>2.7.1-1</version>
 			</dependency>-->
-
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<!--<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-csv</artifactId>
+				<version>${commons-csv.version}}</version>
+			</dependency>-->
 		</dependencies>
 	</dependencyManagement>
 

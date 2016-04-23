@@ -12,6 +12,13 @@
 	<artifactId>parser</artifactId>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+		</dependency>-->
 	</dependencies>
 </project>
