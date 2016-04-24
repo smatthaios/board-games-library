@@ -19,4 +19,39 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="admin" id="1.0.0-CREATE_F_BOARDGAMES_TABLE">
+        <comment>Create the f_boardgames table.</comment>
+        <createTable tableName="f_boardgames" remarks="This table stores the boardgames of the application.">
+            <column autoIncrement="true" name="boardgame_id" type="serial" remarks="The primary key of this table.">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(250)"/>
+            <column name="description" type="varchar(5000)"/>
+            <column name="boardGameCategory" type="varchar(500)"/>
+            <column name="yearPublished" type="int"/>
+            <column name="minPlayingTime" type="int"/>
+            <column name="maximumPlayingTime" type="int"/>
+            <column name="minPlayers" type="int"/>
+            <column name="suggestedPlayers" type="int"/>
+            <column name="rating" type="float"/>
+            <column name="boardGameImage" type="blob"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="admin" id="1.0.0-CREATE_F_USERS_BOARDGAMES_TABLE">
+        <comment>Create the f_users_boardgames table.</comment>
+        <createTable tableName="f_users_boardgames" remarks="This table stores the owned boardgames of a specific User.">
+            <column autoIncrement="true" name="boardgame_id" type="serial" remarks="Part of the primary key of this table."/>
+            <column autoIncrement="true" name="user_id" type="serial" remarks="Part of the primary key of this table."/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="admin" id="ADD_PRIMARYKEY-F_USERS_BOARDGAMES">
+        <addPrimaryKey
+           columnNames="boardgame_id, user_id"
+           constraintName="pk_f_users_boardgames"
+           tableName="f_users_boardgames"
+        />
+    </changeSet>
+
 </databaseChangeLog>
